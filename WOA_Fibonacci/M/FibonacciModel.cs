@@ -30,18 +30,23 @@ namespace WOA_Fibonacci.M
 			}
 		}
 
-		private int _inputInteger;
+		private IList<FibonacciRowModel> _fibonacciRowList;
 
+		public IList<FibonacciRowModel> FibonacciRowList
+		{
+			get { return _fibonacciRowList; }
+			set { _fibonacciRowList = value; }
+		}
+
+		private int _inputInteger;
 		public int InputInteger
 		{
 			get { return _inputInteger; }
 			set
 			{
 				SetProperty(ref _inputInteger, value);
-				//Debug.Print(InputInteger.ToString());
 			}
 		}
-
 
 		public FibonacciModel()
 		{
@@ -49,6 +54,11 @@ namespace WOA_Fibonacci.M
 			{
 				{0, 0},
 				{1, 1}
+			};
+
+			FibonacciRowList= new List<FibonacciRowModel>()
+			{
+				new FibonacciRowModel(BlankSequence[0])
 			};
 		}
 	}

@@ -8,6 +8,7 @@ using System.Windows.Input;
 using Prism.Commands;
 using Prism.Mvvm;
 using WOA_Fibonacci.M;
+using Prism.Events;
 
 namespace WOA_Fibonacci.VM
 {
@@ -22,6 +23,18 @@ namespace WOA_Fibonacci.VM
 				SetProperty(ref _myModel, value);
 			}
 		}
+
+		private FibonacciRowModel _fibRowModel;
+
+		public FibonacciRowModel FibRowModel
+		{
+			get { return _fibRowModel; }
+			set
+			{
+				SetProperty(ref _fibRowModel, value);
+			}
+		}
+
 
 		public ICommand ButtonFindCommandClicked { get; private set; }
 		public ICommand ButtonCreateCommandClicked { get; private set; }
